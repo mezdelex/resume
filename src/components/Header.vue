@@ -53,11 +53,6 @@
           target="_blank"
         />
         <a
-          href="https://linkedin.com/in/mezdelex/"
-          :class="`${Icons.LinkedIn} socialLink p-mr-2`"
-          target="_blank"
-        />
-        <a
           href="https://reddit.com/user/Mezdelex"
           :class="`${Icons.Reddit} socialLink p-mr-2`"
           target="_blank"

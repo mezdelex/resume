@@ -15,7 +15,6 @@ export enum Icons {
   GitHub = "pi pi-github",
   Globe = "fa-solid fa-globe",
   Link = "pi pi-link",
-  LinkedIn = "pi pi-linkedin",
   List = "fa-solid fa-list",
   Reddit = "pi pi-reddit",
 }
