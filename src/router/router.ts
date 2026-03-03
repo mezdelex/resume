@@ -7,9 +7,5 @@ export default createRouter({
       component: () => import("@/views/Projects.vue"),
       path: "/",
     },
-    {
-      component: () => import("@/views/Timeline.vue"),
-      path: "/timeline",
-    },
   ],
 });

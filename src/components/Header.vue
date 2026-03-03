@@ -1,12 +1,5 @@
 <template>
   <header class="header">
-    <div class="p-d-flex p-flex-row p-jc-end p-ai-start p-mr-3 p-pt-3">
-      <Button
-        :icon="Icons.Bars"
-        class="p-button-outlined p-button-warning"
-        @click="showSidebar = true"
-      />
-    </div>
     <div class="p-d-flex p-flex-column p-jc-around p-ai-center">
       <img class="selfie" :src="require('@/assets/alejandro.png')" />
       <h2 class="subTitle">
@@ -60,17 +53,13 @@
       </div>
     </div>
   </header>
-  <right-sidebar v-model:isVisible="showSidebar" />
 </template>
 
 <script setup lang="ts">
-import RightSidebar from "@/components/RightSidebar.vue";
 import gitHubService from "@/services/github/gitHubService";
 import repositoriesStore from "@/shared/repositoriesStore";
 import { Icons } from "@/enums/enums";
-import { onMounted, ref } from "vue";
-
-const showSidebar = ref(false);
+import { onMounted } from "vue";
 
 onMounted(async () => {
   if (repositoriesStore.link === "") {

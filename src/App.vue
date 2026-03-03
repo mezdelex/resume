@@ -120,8 +120,7 @@ ul {
   margin: 0.75rem 2rem 0.75rem 2rem;
 }
 
-.custom-projects,
-.custom-timeline {
+.custom-projects {
   font-size: larger;
   margin-inline: 0.25rem;
 }
@@ -295,10 +294,6 @@ ul {
   color: var(--custom-green);
 }
 
-.p-sidebar .p-sidebar-close {
-  display: none;
-}
-
 .p-scrolltop {
   background: orange !important;
 }
@@ -312,10 +307,6 @@ ul {
   display: block;
   margin: 1rem auto 2rem auto;
   max-height: 200px;
-}
-
-.sidebar-bg {
-  background-color: var(--custom-black);
 }
 
 .social {
@@ -471,25 +462,6 @@ ul {
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
-  }
-}
-
-@media screen and (max-width: 960px) {
-  .p-timeline-event:nth-child(even) {
-    flex-direction: row !important;
-  }
-
-  .p-timeline-event-content {
-    text-align: left !important;
-  }
-
-  .p-timeline-event-opposite {
-    flex: 0 !important;
-    padding: 0 !important;
-  }
-
-  .sidebar-width {
-    width: auto !important;
   }
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
   <Header />
-  <component-cards />
+  <Cards />
   <Footer />
 </template>
 
 <script setup lang="ts">
 import Header from "@/components/Header.vue";
-import ComponentCards from "@/components/ComponentCards.vue";
 import Footer from "@/components/Footer.vue";
+import Cards from "@/components/Cards.vue";
 </script>
