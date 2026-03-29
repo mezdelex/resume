@@ -39,7 +39,7 @@ export default [
     repo: "https://github.com/mezdelex/unpack.nvim",
     app: "https://github.com/mezdelex/unpack.nvim",
     description:
-      "A minimal layer on top of vim.pack API to allow single file plugin configurations. vim.pack is currently under development and only available in the Neovim's nightly branch. Allows deferring plugin load and managing dependencies in a simple yet convenient way via commands or exposed module methods. For a more detailed documentation, check the repository.",
+      "A minimal layer on top of vim.pack API to allow single file plugin configurations. Allows deferring plugin load and managing dependencies in a simple yet convenient way via commands or exposed module methods. For a more detailed documentation, check the repository.",
   },
   {
     id: "CleanTemplate9",
