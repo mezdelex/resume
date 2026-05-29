@@ -109,7 +109,7 @@ export default [
     repo: "https://github.com/mezdelex/dotfiles",
     app: "https://github.com/mezdelex/dotfiles",
     description:
-      "Personal dotfiles with Wezterm terminal, Cascadia Code NF variant, Powershell Core shell, custom prompt forked from patriksvensson's Oh My Posh theme, fuzzy finding via PSFzf, autocompletion via PSReadLine, fast directory navigation via zoxide, icon glyphs via Terminal Icons, Lazygit, Lazydocker, Lazysql, k9s, Yazi TUI file manager, Neovim config, Flow Launcher...",
+      "Personal dotfiles with Wezterm terminal, Cascadia Code NF variant, Powershell Core shell, custom prompt forked from patriksvensson's Oh My Posh theme, fuzzy finding via PSFzf, autocompletion via PSReadLine, fast directory navigation via zoxide, icon glyphs via Terminal Icons, Lazygit, Lazydocker, k9s, Yazi TUI file manager, Neovim config with OpenCode integration via ACP protocol, Flow Launcher...",
   },
   {
     id: "neovim",
