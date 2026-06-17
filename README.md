@@ -19,7 +19,6 @@ A modern, responsive online portfolio built with **Vue 3** and **TypeScript** to
 - **PrimeVue** - Rich set of UI components for Vue.js (custom themed with Everforest colors)
 - **PrimeFlex** - CSS utility library for responsive layouts
 - **PrimeIcons** - Icon library by PrimeUI
-- **Font Awesome** - Additional icon set for enhanced visuals
 
 ### Routing & State
 
@@ -37,8 +36,6 @@ A modern, responsive online portfolio built with **Vue 3** and **TypeScript** to
 ### Utilities
 
 - **date-fns** - Modern JavaScript date utility library
-- **Moment.js** - Date parsing and manipulation
-- **Lodash** - JavaScript utility library (types included)
 
 ## Project Structure
 
