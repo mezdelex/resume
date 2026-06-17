@@ -43,7 +43,6 @@
     </Card>
     <div
       v-else
-      class="p-col"
       style="
         display: flex;
         flex-direction: column;
@@ -94,9 +93,10 @@ watchEffect(() => projectsService.sortProjects());
 <style scoped>
 .p-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(22rem, 100%), 1fr));
   gap: 2rem;
-  padding: 0.5rem;
+  margin: 0;
+  padding: 0.5rem 0.25rem;
   justify-items: center;
 }
 </style>

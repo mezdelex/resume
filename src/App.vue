@@ -1,5 +1,5 @@
 <template>
-  <div class="page p-col-12 p-sm-12 p-md-11">
+  <div class="page">
     <router-view />
     <scroll-top />
   </div>
@@ -81,12 +81,6 @@ main {
   animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-ul {
-  list-style: none;
-  margin-top: 0.5rem;
-  padding: 0 0.3rem;
-}
-
 .attribution {
   color: var(--text-muted);
   font-size: 0.6rem;
@@ -96,16 +90,6 @@ ul {
 
 .attribution:hover {
   color: var(--accent);
-}
-
-.cardHover {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.cardHover:hover {
-  transform: scale3d(1.02, 1.02, 1.02);
-  box-shadow: var(--shadow-glow);
 }
 
 .linkHover {
@@ -210,10 +194,11 @@ ul {
   display: flex;
   flex-direction: column;
   height: 40rem;
+  max-width: 23rem;
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease,
     box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  width: 23rem;
+  width: 100%;
 }
 
 .p-card:hover {
@@ -270,7 +255,13 @@ ul {
 .page {
   margin: 0 auto;
   max-width: 1400px;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 0 0.5rem;
+  }
 }
 
 .selfie {
@@ -348,12 +339,14 @@ ul {
       0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
       -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
   }
+
   12.5% {
     box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.727926px -12.727926px 0 0 var(--accent),
       18px 0 0 0 var(--accent), 12.727926px 12.727926px 0 0 var(--accent),
       0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
       -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
   }
+
   25% {
     box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0),
       12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 0 var(--accent),
@@ -361,6 +354,7 @@ ul {
       -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0),
       -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
   }
+
   37.5% {
     box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0),
       12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0),
@@ -368,6 +362,7 @@ ul {
       -12.727926px 12.727926px 0 0 var(--accent), -18px 0 0 -5px rgba(152, 128, 255, 0),
       -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
   }
+
   50% {
     box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0),
       12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0),
@@ -375,6 +370,7 @@ ul {
       -12.727926px 12.727926px 0 0 var(--accent), -18px 0 0 0 var(--accent),
       -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
   }
+
   62.5% {
     box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0),
       12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0),
@@ -382,12 +378,14 @@ ul {
       -12.727926px 12.727926px 0 0 var(--accent), -18px 0 0 0 var(--accent),
       -12.727926px -12.727926px 0 0 var(--accent);
   }
+
   75% {
     box-shadow: 0 -18px 0 0 var(--accent), 12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0),
       18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
       0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
       -18px 0 0 0 var(--accent), -12.727926px -12.727926px 0 0 var(--accent);
   }
+
   87.5% {
     box-shadow: 0 -18px 0 0 var(--accent), 12.727926px -12.727926px 0 0 var(--accent),
       18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
@@ -401,6 +399,7 @@ ul {
     opacity: 0;
     transform: translateY(-24px) scale(0.98);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -412,6 +411,7 @@ ul {
     opacity: 0;
     transform: translateY(24px) scale(0.98);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
