@@ -58,8 +58,11 @@ a:hover {
 }
 
 .p-scrolltop {
+  -webkit-tap-highlight-color: transparent !important;
   background: var(--accent) !important;
   border-radius: 50% !important;
+  overflow: hidden !important;
+  touch-action: manipulation;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
