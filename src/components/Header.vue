@@ -10,10 +10,7 @@
         Alejandro Conde Gómez
         <span class="curly-brackets">}</span>
       </h1>
-      <h3
-        class="github"
-        v-if="repositoriesStore.finished && repositoriesStore.link"
-      >
+      <h3 class="github" v-if="repositoriesStore.finished && repositoriesStore.link">
         <div class="date-and-link">
           <div>
             Last activity:
@@ -21,12 +18,7 @@
           </div>
           <div>
             Commit:
-            <a
-              class="custom-link"
-              :href="repositoriesStore.link"
-              target="_blank"
-              >Link</a
-            >
+            <a class="custom-link" :href="repositoriesStore.link" target="_blank">Link</a>
           </div>
         </div>
         <div class="custom-message-container">
@@ -56,13 +48,13 @@
 </template>
 
 <script setup lang="ts">
-import gitHubService from "@/services/github/gitHubService";
-import repositoriesStore from "@/shared/repositoriesStore";
-import { Icons } from "@/enums/enums";
-import { onMounted } from "vue";
+import gitHubService from '@/services/github/gitHubService';
+import repositoriesStore from '@/shared/repositoriesStore';
+import { Icons } from '@/enums/enums';
+import { onMounted } from 'vue';
 
 onMounted(async () => {
-  if (repositoriesStore.link === "") {
+  if (repositoriesStore.link === '') {
     await gitHubService.getRepos();
     gitHubService.getUpdatedRepo();
     await gitHubService.getLastCommit();
@@ -70,3 +62,21 @@ onMounted(async () => {
   }
 });
 </script>
+
+<style scoped>
+.header {
+  position: relative;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+</style>

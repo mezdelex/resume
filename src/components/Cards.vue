@@ -12,12 +12,8 @@
           <i :class="`${Icons.Cloud} text-small`"></i>
           {{ getLastUpdate(project) }}
         </span>
-        <a :href="project.app" target="_">
-          <img
-            class="cardHover img-field"
-            :src="project.image"
-            :alt="project.name"
-          />
+        <a :href="project.app" target="_" class="card-image-link">
+          <img class="img-field" :src="project.image" :alt="project.name" />
         </a>
       </template>
       <template #title>
@@ -62,23 +58,23 @@
 </template>
 
 <script setup lang="ts">
-import IProject from "@/models/IProject";
-import projectsService from "@/services/projects/projectsService";
-import projectsStore from "@/shared/projectsStore";
-import repositoriesStore from "@/shared/repositoriesStore";
-import { Icons } from "@/enums/enums";
+import IProject from '@/models/IProject';
+import projectsService from '@/services/projects/projectsService';
+import projectsStore from '@/shared/projectsStore';
+import repositoriesStore from '@/shared/repositoriesStore';
+import { Icons } from '@/enums/enums';
 import {
   differenceInDays,
   differenceInHours,
   differenceInMinutes,
   format,
   parseISO,
-} from "date-fns";
-import { watchEffect } from "vue";
+} from 'date-fns';
+import { watchEffect } from 'vue';
 
 const getLastUpdate = (project: IProject): string => {
   if (!project.pushed_at.length) {
-    return "Unknown";
+    return 'Unknown';
   }
 
   const now = new Date();
@@ -89,8 +85,18 @@ const getLastUpdate = (project: IProject): string => {
     ? hoursDiff < 1
       ? `${differenceInMinutes(now, parsed)} minute(s) ago`
       : `${hoursDiff} hour(s) ago`
-    : format(parsed, "yyyy-MM-dd");
+    : format(parsed, 'yyyy-MM-dd');
 };
 
 watchEffect(() => projectsService.sortProjects());
 </script>
+
+<style scoped>
+.p-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  gap: 2rem;
+  padding: 0.5rem;
+  justify-items: center;
+}
+</style>

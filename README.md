@@ -16,7 +16,7 @@ A modern, responsive online portfolio built with **Vue 3** and **TypeScript** to
 
 ### UI & Styling
 
-- **PrimeVue** - Rich set of UI components for Vue.js
+- **PrimeVue** - Rich set of UI components for Vue.js (custom themed with Everforest colors)
 - **PrimeFlex** - CSS utility library for responsive layouts
 - **PrimeIcons** - Icon library by PrimeUI
 - **Font Awesome** - Additional icon set for enhanced visuals
@@ -30,6 +30,9 @@ A modern, responsive online portfolio built with **Vue 3** and **TypeScript** to
 - **Vue CLI 5** - Standard tooling for Vue.js development
 - **Babel** - JavaScript compiler for modern syntax support
 - **Yarn** - Fast, reliable dependency management
+- **Husky** - Git hooks for automated linting before commits
+- **lint-staged** - Run linters against staged git files
+- **Prettier** - Code formatter for consistent style
 
 ### Utilities
 
@@ -59,6 +62,8 @@ resume/
 │   ├── views/             # Page-level components
 │   ├── App.vue            # Root component
 │   └── main.ts            # Application entry point
+├── .husky/                # Git hooks (pre-commit formatting)
+├── .prettierrc            # Prettier code style configuration
 ├── babel.config.js        # Babel configuration
 ├── tsconfig.json          # TypeScript configuration
 └── package.json           # Project dependencies
@@ -105,6 +110,16 @@ yarn build
 
 Production files will be generated in the `dist/` directory.
 
+## Code Formatting
+
+This project uses **Prettier** to enforce consistent code style. A pre-commit hook (via Husky + lint-staged) automatically formats staged files before every commit.
+
+To manually format all source files:
+
+```bash
+yarn format
+```
+
 ## Configuration
 
 ### TypeScript
@@ -123,10 +138,15 @@ This project is automatically deployed to **Netlify** via GitHub Actions CD pipe
 2. Deploys to Netlify hosting
 3. Makes the portfolio available on the dedicated domain
 
+## Design
+
+The portfolio uses the **Everforest** color scheme — a warm, earthy dark palette with soft greens and yellows that's easy on the eyes. The UI features glass-morphism cards, subtle gradient accents, and smooth animations.
+
 ## Features
 
 - **Responsive Design** - Optimized for desktop, tablet, and mobile devices
 - **Project Showcase** - Display of development projects with descriptions and technologies
 - **Skills Display** - Technical skills and experience highlights
-- **Modern UI** - Clean, professional interface using PrimeVue components
+- **Modern UI** - Clean, professional interface using PrimeVue components with Everforest color scheme
 - **TypeScript Support** - Full type safety throughout the codebase
+- **Code Quality** - Prettier formatting enforced via husky pre-commit hooks
