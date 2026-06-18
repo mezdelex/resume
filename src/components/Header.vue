@@ -148,7 +148,10 @@ onMounted(async () => {
 }
 
 .github {
+  align-items: center;
   color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
   font-size: 0.8rem;
   font-weight: 400;
   margin: 1.25rem auto 0.5rem;
