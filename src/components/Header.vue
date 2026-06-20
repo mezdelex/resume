@@ -160,7 +160,7 @@ onMounted(async () => {
 }
 
 .custom-date {
-  color: #7fbbb3;
+  color: var(--info);
   font-weight: 600;
   margin-right: 0.5rem;
 }
@@ -170,7 +170,7 @@ onMounted(async () => {
 }
 
 .custom-message {
-  color: #7fbbb3;
+  color: var(--info);
 }
 
 .custom-message-container {
@@ -183,7 +183,5 @@ onMounted(async () => {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
 }
 </style>
