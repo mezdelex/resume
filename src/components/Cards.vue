@@ -95,10 +95,10 @@ main {
 }
 
 .p-grid :deep(.p-card) {
-  background: var(--bg-card);
   backdrop-filter: blur(16px);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   height: 40rem;
@@ -165,7 +165,7 @@ main {
   display: block;
   font-size: 0.7rem;
   font-weight: 500;
-  padding: 0.5rem 1rem 0.25rem;
+  padding: 0.5rem 1rem;
 }
 
 .description-field {
@@ -193,14 +193,14 @@ main {
 .dot-spin {
   animation: dot-spin 1s infinite linear;
   background-color: transparent;
-  border-radius: 5px;
+  border-radius: var(--radius-md);
   box-shadow: 0 -18px 0 0 var(--accent), 12.727926px -12.727926px 0 0 var(--accent),
     18px 0 0 0 var(--accent), 12.727926px 12.727926px 0 0 rgba(152, 128, 255, 0),
     0 18px 0 0 rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 0 rgba(152, 128, 255, 0),
     -18px 0 0 0 rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 0 rgba(152, 128, 255, 0);
   color: transparent;
-  height: 10px;
   display: flex;
+  height: 10px;
   width: 10px;
 }
 
