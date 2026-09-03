@@ -15,8 +15,9 @@
   --bg-secondary: #2b3339;
   --border-hover: rgba(255, 255, 255, 0.12);
   --border: rgba(255, 255, 255, 0.06);
-  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', sans-serif;
+  --font:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
   --info: #7fbbb3;
   --radius-lg: 1.5rem;
   --radius-md: 1rem;
@@ -35,11 +36,8 @@
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-image: radial-gradient(
-      ellipse 80% 50% at 50% -20%,
-      rgba(167, 192, 128, 0.08),
-      transparent
-    ),
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(167, 192, 128, 0.08), transparent),
     radial-gradient(ellipse 50% 30% at 80% 20%, rgba(219, 188, 127, 0.06), transparent);
   background: var(--bg-primary);
   font-family: var(--font);
@@ -64,7 +62,9 @@ a:hover {
   border-radius: 50% !important;
   overflow: hidden !important;
   touch-action: manipulation;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .p-scrolltop:hover {

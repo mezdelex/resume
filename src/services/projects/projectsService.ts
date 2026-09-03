@@ -1,7 +1,8 @@
+import IProjectsService from './IProjectsService';
+import IRepository from '@/models/IRepository';
 import projectsData from '@/data/projectsData';
 import projectsStore from '@/shared/projectsStore';
 import repositoriesStore from '@/shared/repositoriesStore';
-import IProjectsService from './IProjectsService';
 
 export default {
   sortProjects: () => {
@@ -11,8 +12,9 @@ export default {
           project.id !== ''
             ? {
                 ...project,
-                pushed_at: repositoriesStore.repos.find(repo => repo.name === project.id)!
-                  .pushed_at,
+                pushed_at: repositoriesStore.repos.find(
+                  (repo: IRepository) => repo.name === project.id
+                )!.pushed_at,
               }
             : project
         )

@@ -1,7 +1,7 @@
 <template>
   <header class="header">
-    <div class="p-d-flex p-flex-column p-jc-around p-ai-center">
-      <img class="selfie" :src="require('@/assets/alejandro.png')" />
+    <div class="flex flex-column justify-content-around align-items-center">
+      <img class="selfie" :src="alejandro" />
       <h2 class="subTitle">
         <span class="software-developer">Software Engineer</span>
       </h2>
@@ -27,19 +27,19 @@
         </div>
       </h3>
       <div v-else class="github">
-        <Skeleton width="15rem" class="p-mb-1" />
-        <Skeleton width="20rem" class="p-mb-1" />
+        <Skeleton width="15rem" class="mb-1" />
+        <Skeleton width="20rem" class="mb-1" />
         <Skeleton width="20rem" />
       </div>
       <div class="social">
         <a
           href="https://github.com/mezdelex"
-          :class="`${Icons.GitHub} socialLink p-mr-2`"
+          :class="`${Icons.GitHub} socialLink mr-2`"
           target="_blank"
         />
         <a
           href="https://reddit.com/user/Mezdelex"
-          :class="`${Icons.Reddit} socialLink p-mr-2`"
+          :class="`${Icons.Reddit} socialLink mr-2`"
           target="_blank"
         />
       </div>
@@ -52,6 +52,7 @@ import gitHubService from '@/services/github/gitHubService';
 import repositoriesStore from '@/shared/repositoriesStore';
 import { Icons } from '@/enums/enums';
 import { onMounted } from 'vue';
+import alejandro from '@/assets/alejandro.png';
 
 onMounted(async () => {
   if (repositoriesStore.link === '') {
@@ -91,7 +92,9 @@ onMounted(async () => {
   margin: 2rem auto 1rem;
   max-height: 200px;
   max-width: 200px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
   width: auto;
 }
 
@@ -109,7 +112,9 @@ onMounted(async () => {
   color: var(--text-secondary);
   font-size: 2.2rem;
   line-height: 1;
-  transition: color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    color 0.3s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .socialLink:hover {
