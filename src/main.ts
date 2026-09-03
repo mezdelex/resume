@@ -1,4 +1,5 @@
-import App from '@/App.vue';
+import App from './App.vue';
+import Aura from '@primeuix/themes/aura';
 import Card from 'primevue/card';
 import PrimeVue from 'primevue/config';
 import ScrollTop from 'primevue/scrolltop';
@@ -8,13 +9,22 @@ import { createApp } from 'vue';
 
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
-import 'primevue/resources/primevue.min.css';
-import 'primevue/resources/themes/lara-dark-green/theme.css';
 
-createApp(App)
-  .use(PrimeVue, { ripple: true })
-  .use(router)
-  .component('Card', Card)
-  .component('ScrollTop', ScrollTop)
-  .component('Skeleton', Skeleton)
-  .mount('#app');
+const app = createApp(App);
+
+app.use(PrimeVue, {
+  ripple: true,
+  theme: {
+    preset: Aura,
+    options: {
+      darkModeSelector: '.dark-mode',
+    },
+  },
+});
+app.use(router);
+
+app.component('Card', Card);
+app.component('ScrollTop', ScrollTop);
+app.component('Skeleton', Skeleton);
+
+app.mount('#app');

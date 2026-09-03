@@ -2,9 +2,9 @@
 
 A modern, responsive online portfolio built with **Vue 3** and **TypeScript** to showcase development experience, projects, and technical skills.
 
-![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?style=flat&logo=vue.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-4.8-3178C6?style=flat&logo=typescript&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-19+-339933?style=flat&logo=node.js&logoColor=white)
+![Vue.js](https://img.shields.io/badge/Vue.js-3.5+-4FC08D?style=flat&logo=vue.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=flat&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-20+-339933?style=flat&logo=node.js&logoColor=white)
 ![Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)
 
 ## Tech Stack
@@ -14,21 +14,22 @@ A modern, responsive online portfolio built with **Vue 3** and **TypeScript** to
 - **Vue 3** - Progressive JavaScript framework with Composition API for building user interfaces
 - **TypeScript** - Typed superset of JavaScript for improved code quality and developer experience
 
+### Build Tool
+
+- **Vite** - Next generation frontend tooling for fast development and optimized builds
+
 ### UI & Styling
 
-- **PrimeVue** - Rich set of UI components for Vue.js (custom themed with Everforest colors)
-- **PrimeFlex** - CSS utility library for responsive layouts
-- **PrimeIcons** - Icon library by PrimeUI
+- **PrimeVue 4** - Rich set of UI components for Vue.js with Aura theme
+- **PrimeFlex 4** - CSS utility library for responsive layouts
+- **PrimeIcons 7** - Icon library by PrimeUI
 
 ### Routing & State
 
-- **Vue Router 4** - Official router for Vue.js applications
+- **Vue Router 4.5** - Official router for Vue.js applications
 
 ### Development Tools
 
-- **Vue CLI 5** - Standard tooling for Vue.js development
-- **Babel** - JavaScript compiler for modern syntax support
-- **Yarn** - Fast, reliable dependency management
 - **Husky** - Git hooks for automated linting before commits
 - **lint-staged** - Run linters against staged git files
 - **Prettier** - Code formatter for consistent style
@@ -41,7 +42,6 @@ A modern, responsive online portfolio built with **Vue 3** and **TypeScript** to
 
 ```
 resume/
-├── public/                 # Static assets
 ├── src/
 │   ├── assets/            # Images and static resources
 │   ├── components/        # Reusable Vue components
@@ -61,8 +61,10 @@ resume/
 │   └── main.ts            # Application entry point
 ├── .husky/                # Git hooks (pre-commit formatting)
 ├── .prettierrc            # Prettier code style configuration
-├── babel.config.js        # Babel configuration
+├── env.d.ts               # Vite client types
+├── index.html             # HTML entry point
 ├── tsconfig.json          # TypeScript configuration
+├── vite.config.ts         # Vite configuration
 └── package.json           # Project dependencies
 ```
 
@@ -70,8 +72,7 @@ resume/
 
 Before you begin, ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (version 19 or higher)
-- [Yarn](https://yarnpkg.com/) package manager
+- [Node.js](https://nodejs.org/) (version 20 or higher)
 
 ## Installation
 
@@ -84,7 +85,7 @@ Before you begin, ensure you have the following installed:
 
 2. Install dependencies:
    ```bash
-   yarn install
+   npm install
    ```
 
 ## Development
@@ -92,20 +93,28 @@ Before you begin, ensure you have the following installed:
 Start the development server:
 
 ```bash
-yarn serve
+npm run dev
 ```
 
-The application will be available at `http://localhost:8080` (or the next available port).
+The application will be available at `http://localhost:5173`.
 
 ## Build
 
 Build for production:
 
 ```bash
-yarn build
+npm run build
 ```
 
 Production files will be generated in the `dist/` directory.
+
+## Preview
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
 
 ## Code Formatting
 
@@ -114,7 +123,7 @@ This project uses **Prettier** to enforce consistent code style. A pre-commit ho
 To manually format all source files:
 
 ```bash
-yarn format
+npm run format
 ```
 
 ## Configuration
@@ -123,9 +132,9 @@ yarn format
 
 TypeScript configuration is defined in `tsconfig.json` with strict mode enabled and path aliases configured (`@/*` maps to `src/*`).
 
-### Babel
+### Vite
 
-Babel configuration in `babel.config.js` handles transpilation for broader browser compatibility.
+Vite configuration is defined in `vite.config.ts` with the Vue plugin and path aliases.
 
 ## Deployment
 

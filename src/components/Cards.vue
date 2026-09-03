@@ -1,7 +1,7 @@
 <template>
   <main v-if="repositoriesStore.finished" class="p-grid">
     <Card
-      class="p-mb-auto p-mt-5 p-mx-auto"
+      class="mb-auto mt-5 mx-auto"
       v-for="project in projectsStore.projects"
       :key="project.name"
     >
@@ -24,7 +24,7 @@
         </div>
       </template>
       <template #footer v-if="project.repo">
-        <div class="p-d-flex p-flex-row p-jc-around p-ai-end">
+        <div class="flex flex-row justify-content-around align-items-end">
           <a :href="project.repo" target="_">
             <div class="linkHover">
               <i :class="Icons.GitHub"></i>
@@ -101,10 +101,12 @@ main {
   border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  height: 40rem;
+  height: 38rem;
   max-width: 23rem;
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease,
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
     box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   width: 100%;
 }
@@ -176,7 +178,9 @@ main {
 
 .linkHover {
   color: var(--accent);
-  transition: color 0.2s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    color 0.2s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .linkHover:hover {
@@ -194,10 +198,15 @@ main {
   animation: dot-spin 1s infinite linear;
   background-color: transparent;
   border-radius: var(--radius-md);
-  box-shadow: 0 -18px 0 0 var(--accent), 12.727926px -12.727926px 0 0 var(--accent),
-    18px 0 0 0 var(--accent), 12.727926px 12.727926px 0 0 rgba(152, 128, 255, 0),
-    0 18px 0 0 rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 0 rgba(152, 128, 255, 0),
-    -18px 0 0 0 rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 0 rgba(152, 128, 255, 0);
+  box-shadow:
+    0 -18px 0 0 var(--accent),
+    12.727926px -12.727926px 0 0 var(--accent),
+    18px 0 0 0 var(--accent),
+    12.727926px 12.727926px 0 0 rgba(152, 128, 255, 0),
+    0 18px 0 0 rgba(152, 128, 255, 0),
+    -12.727926px 12.727926px 0 0 rgba(152, 128, 255, 0),
+    -18px 0 0 0 rgba(152, 128, 255, 0),
+    -12.727926px -12.727926px 0 0 rgba(152, 128, 255, 0);
   color: transparent;
   display: flex;
   height: 10px;
@@ -207,63 +216,99 @@ main {
 @keyframes dot-spin {
   0%,
   100% {
-    box-shadow: 0 -18px 0 0 var(--accent), 12.727926px -12.727926px 0 0 var(--accent),
-      18px 0 0 0 var(--accent), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
+    box-shadow:
+      0 -18px 0 0 var(--accent),
+      12.727926px -12.727926px 0 0 var(--accent),
+      18px 0 0 0 var(--accent),
+      12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
+      0 18px 0 -5px rgba(152, 128, 255, 0),
+      -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
+      -18px 0 0 -5px rgba(152, 128, 255, 0),
+      -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
   }
 
   12.5% {
-    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.727926px -12.727926px 0 0 var(--accent),
-      18px 0 0 0 var(--accent), 12.727926px 12.727926px 0 0 var(--accent),
-      0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
+    box-shadow:
+      0 -18px 0 -5px rgba(152, 128, 255, 0),
+      12.727926px -12.727926px 0 0 var(--accent),
+      18px 0 0 0 var(--accent),
+      12.727926px 12.727926px 0 0 var(--accent),
+      0 18px 0 -5px rgba(152, 128, 255, 0),
+      -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
+      -18px 0 0 -5px rgba(152, 128, 255, 0),
+      -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
   }
 
   25% {
-    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0),
-      12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 0 var(--accent),
-      12.727926px 12.727926px 0 0 var(--accent), 0 18px 0 0 var(--accent),
-      -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0),
+    box-shadow:
+      0 -18px 0 -5px rgba(152, 128, 255, 0),
+      12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0),
+      18px 0 0 0 var(--accent),
+      12.727926px 12.727926px 0 0 var(--accent),
+      0 18px 0 0 var(--accent),
+      -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
+      -18px 0 0 -5px rgba(152, 128, 255, 0),
       -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
   }
 
   37.5% {
-    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0),
-      12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0),
-      12.727926px 12.727926px 0 0 var(--accent), 0 18px 0 0 var(--accent),
-      -12.727926px 12.727926px 0 0 var(--accent), -18px 0 0 -5px rgba(152, 128, 255, 0),
+    box-shadow:
+      0 -18px 0 -5px rgba(152, 128, 255, 0),
+      12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0),
+      18px 0 0 -5px rgba(152, 128, 255, 0),
+      12.727926px 12.727926px 0 0 var(--accent),
+      0 18px 0 0 var(--accent),
+      -12.727926px 12.727926px 0 0 var(--accent),
+      -18px 0 0 -5px rgba(152, 128, 255, 0),
       -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
   }
 
   50% {
-    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0),
-      12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0),
-      12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 0 var(--accent),
-      -12.727926px 12.727926px 0 0 var(--accent), -18px 0 0 0 var(--accent),
+    box-shadow:
+      0 -18px 0 -5px rgba(152, 128, 255, 0),
+      12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0),
+      18px 0 0 -5px rgba(152, 128, 255, 0),
+      12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
+      0 18px 0 0 var(--accent),
+      -12.727926px 12.727926px 0 0 var(--accent),
+      -18px 0 0 0 var(--accent),
       -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
   }
 
   62.5% {
-    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0),
-      12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0),
-      12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0),
-      -12.727926px 12.727926px 0 0 var(--accent), -18px 0 0 0 var(--accent),
+    box-shadow:
+      0 -18px 0 -5px rgba(152, 128, 255, 0),
+      12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0),
+      18px 0 0 -5px rgba(152, 128, 255, 0),
+      12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
+      0 18px 0 -5px rgba(152, 128, 255, 0),
+      -12.727926px 12.727926px 0 0 var(--accent),
+      -18px 0 0 0 var(--accent),
       -12.727926px -12.727926px 0 0 var(--accent);
   }
 
   75% {
-    box-shadow: 0 -18px 0 0 var(--accent), 12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0),
-      18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      -18px 0 0 0 var(--accent), -12.727926px -12.727926px 0 0 var(--accent);
+    box-shadow:
+      0 -18px 0 0 var(--accent),
+      12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0),
+      18px 0 0 -5px rgba(152, 128, 255, 0),
+      12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
+      0 18px 0 -5px rgba(152, 128, 255, 0),
+      -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
+      -18px 0 0 0 var(--accent),
+      -12.727926px -12.727926px 0 0 var(--accent);
   }
 
   87.5% {
-    box-shadow: 0 -18px 0 0 var(--accent), 12.727926px -12.727926px 0 0 var(--accent),
-      18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 0 var(--accent);
+    box-shadow:
+      0 -18px 0 0 var(--accent),
+      12.727926px -12.727926px 0 0 var(--accent),
+      18px 0 0 -5px rgba(152, 128, 255, 0),
+      12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
+      0 18px 0 -5px rgba(152, 128, 255, 0),
+      -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
+      -18px 0 0 -5px rgba(152, 128, 255, 0),
+      -12.727926px -12.727926px 0 0 var(--accent);
   }
 }
 

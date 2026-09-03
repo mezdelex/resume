@@ -1,4 +1,5 @@
 import IGitHubService from '@/services/github/IGitHubService';
+import IRepository from '@/models/IRepository';
 import repositoriesStore from '@/shared/repositoriesStore';
 
 export default {
@@ -10,7 +11,8 @@ export default {
   getUpdatedRepo: () => {
     if (repositoriesStore.repos.length)
       repositoriesStore.repo = repositoriesStore.repos.reduce(
-        (acc, next) => (!acc || next.pushed_at > acc.pushed_at ? next : acc),
+        (acc: IRepository, next: IRepository) =>
+          !acc || next.pushed_at > acc.pushed_at ? next : acc,
         repositoriesStore.repos[0]
       ).name;
   },

@@ -1,11 +1,34 @@
 import IProject from '@/models/IProject';
+import angular21 from '@/assets/angular21.png';
+import aoc2020 from '@/assets/aoc2020.png';
+import aoc2022 from '@/assets/aoc2022.png';
+import aoc2023 from '@/assets/aoc2023.png';
+import botchy from '@/assets/botchy.png';
+import calculator from '@/assets/calculator.png';
+import clean from '@/assets/clean.png';
+import clean9 from '@/assets/clean9.png';
+import concesionario from '@/assets/concesionario.jpg';
+import dotfiles from '@/assets/dotfiles.png';
+import hackerrank from '@/assets/hackerrank.png';
+import leetcode from '@/assets/leetcode.png';
+import leptos from '@/assets/leptos.png';
+import monkeytype from '@/assets/monkeytype.png';
+import neovim from '@/assets/neovim.png';
+import protoOtel from '@/assets/proto-otel.jpg';
+import recetario from '@/assets/recetario.jpg';
+import recetario2 from '@/assets/recetario2.jpg';
+import resume from '@/assets/resume.png';
+import rust from '@/assets/rust.png';
+import todoapp from '@/assets/todoapp.png';
+import trivia from '@/assets/trivia.jpg';
+import unpack from '@/assets/unpack.png';
 
 export default [
   {
     id: 'expenses-app',
     pushed_at: '',
     name: 'Expenses',
-    image: require('@/assets/angular21.png'),
+    image: angular21,
     repo: 'https://github.com/mezdelex/expenses-app',
     app: 'https://github.com/mezdelex/expenses-app',
     description:
@@ -15,7 +38,7 @@ export default [
     id: 'proto-otel',
     pushed_at: '',
     name: 'Protobuf OpenTelemetry',
-    image: require('@/assets/proto-otel.jpg'),
+    image: protoOtel,
     repo: 'https://github.com/mezdelex/proto-otel',
     app: 'https://www.youtube.com/watch?v=OzJtWV4tgKY',
     description:
@@ -25,7 +48,7 @@ export default [
     id: 'resume-rs',
     pushed_at: '',
     name: 'Resume RS',
-    image: require('@/assets/leptos.png'),
+    image: leptos,
     repo: 'https://github.com/mezdelex/resume-rs',
     app: 'https://mezdelex-resume.netlify.app',
     description:
@@ -35,7 +58,7 @@ export default [
     id: 'unpack.nvim',
     pushed_at: '',
     name: 'Unpack',
-    image: require('@/assets/unpack.png'),
+    image: unpack,
     repo: 'https://github.com/mezdelex/unpack.nvim',
     app: 'https://github.com/mezdelex/unpack.nvim',
     description:
@@ -45,17 +68,17 @@ export default [
     id: 'CleanTemplate9',
     pushed_at: '',
     name: '.NET 9 Clean Architecture Template (Archived)',
-    image: require('@/assets/clean9.png'),
+    image: clean9,
     repo: 'https://github.com/mezdelex/CleanTemplate8',
     app: 'https://github.com/mezdelex/CleanTemplate8',
     description:
-      ".NET9 Clean Architecture template using DDD, Event Sourcing with MediatR, Pub/Sub pattern with MassTransit and RabbitMQ, Entity Framework Core's Identity, Redis cache, CQRS pattern, Specification pattern, Minimal API, FluentValidations, Unit of Work, Serilog, CSharpier pre-commit hooks with Husky, xUnit and Moq, FluentAssertions, etc. Coded with Neovim",
+      ".NET9 Clean Architecture template using DDD, Event Sourcing with MediatR, Pub/Sub pattern with MassTransit and RabbitMQ, Entity Framework Core's Identity, Redis cache, CQRS pattern, Specification pattern, Minimal API, FluentValidations, Unit of Work, Serilog, CSharpier pre-commit hooks with Husky, xUnit and Moq, FluentAssertions, etc. Coded with Neovim.",
   },
   {
     id: 'AoC2023',
     pushed_at: '',
     name: 'Advent of Code (2023)',
-    image: require('@/assets/aoc2023.png'),
+    image: aoc2023,
     repo: 'https://github.com/mezdelex/AoC2023',
     app: 'https://github.com/mezdelex/AoC2023',
     description:
@@ -65,7 +88,7 @@ export default [
     id: 'RustExamples',
     pushed_at: '',
     name: 'Rust Examples',
-    image: require('@/assets/rust.png'),
+    image: rust,
     repo: 'https://github.com/mezdelex/RustExamples',
     app: 'https://github.com/mezdelex/RustExamples',
     description:
@@ -75,17 +98,17 @@ export default [
     id: 'CleanTemplate',
     pushed_at: '',
     name: '.NET 7 Clean Architecture Template (Archived)',
-    image: require('@/assets/clean.png'),
+    image: clean,
     repo: 'https://github.com/mezdelex/CleanTemplate',
     app: 'https://github.com/mezdelex/CleanTemplate',
     description:
-      '.NET7 Clean Architecture template using DDD, Event Sourcing with MediatR library, Pub/Sub pattern with MassTransit library and RabbitMQ, CQRS pattern, Minimal API, Docker for PostgreSQL and RabbitMQ containerization, FluentValidations, Unit of Work pattern, Serilog logging, EditorConfig, Testing with xUnit, FluentAssertions, etc. Coded with Neovim',
+      '.NET7 Clean Architecture template using DDD, Event Sourcing with MediatR library, Pub/Sub pattern with MassTransit library and RabbitMQ, CQRS pattern, Minimal API, Docker for PostgreSQL and RabbitMQ containerization, FluentValidations, Unit of Work pattern, Serilog logging, EditorConfig, Testing with xUnit, FluentAssertions, etc. Coded with Neovim.',
   },
   {
     id: 'TodoApp',
     pushed_at: '',
     name: 'TodoApp API',
-    image: require('@/assets/todoapp.png'),
+    image: todoapp,
     repo: 'https://github.com/mezdelex/TodoApp',
     app: 'https://github.com/mezdelex/TodoApp',
     description:
@@ -95,7 +118,7 @@ export default [
     id: 'botchy',
     pushed_at: '',
     name: 'Botchy',
-    image: require('@/assets/botchy.png'),
+    image: botchy,
     repo: 'https://github.com/mezdelex/botchy',
     app: 'https://github.com/mezdelex/botchy',
     description:
@@ -105,7 +128,7 @@ export default [
     id: 'dotfiles',
     pushed_at: '',
     name: 'Dotfiles',
-    image: require('@/assets/dotfiles.png'),
+    image: dotfiles,
     repo: 'https://github.com/mezdelex/dotfiles',
     app: 'https://github.com/mezdelex/dotfiles',
     description:
@@ -115,7 +138,7 @@ export default [
     id: 'neovim',
     pushed_at: '',
     name: 'Neovim',
-    image: require('@/assets/neovim.png'),
+    image: neovim,
     repo: 'https://github.com/mezdelex/neovim-config',
     app: 'https://github.com/mezdelex/neovim-config',
     description:
@@ -125,7 +148,7 @@ export default [
     id: 'AoC2022',
     pushed_at: '',
     name: 'Advent of Code (2022)',
-    image: require('@/assets/aoc2022.png'),
+    image: aoc2022,
     repo: 'https://github.com/mezdelex/AoC2022',
     app: 'https://github.com/mezdelex/AoC2022',
     description:
@@ -135,7 +158,7 @@ export default [
     id: '',
     pushed_at: '2023-11-08T07:40:47Z',
     name: 'Touch Typing',
-    image: require('@/assets/monkeytype.png'),
+    image: monkeytype,
     repo: 'https://github.com/monkeytypegame/monkeytype',
     app: 'https://monkeytype.com/',
     description:
@@ -145,7 +168,7 @@ export default [
     id: 'Calculator',
     pushed_at: '',
     name: 'Calculator',
-    image: require('@/assets/calculator.png'),
+    image: calculator,
     repo: 'https://github.com/mezdelex/Calculator',
     app: 'https://calculator-mezdelex.netlify.app',
     description:
@@ -155,7 +178,7 @@ export default [
     id: 'LeetCode',
     pushed_at: '',
     name: 'LeetCode',
-    image: require('@/assets/leetcode.png'),
+    image: leetcode,
     repo: 'https://github.com/mezdelex/LeetCode',
     app: 'https://leetcode.com/mezdelex',
     description:
@@ -165,7 +188,7 @@ export default [
     id: 'resume',
     pushed_at: '',
     name: 'Resume',
-    image: require('@/assets/resume.png'),
+    image: resume,
     repo: 'https://github.com/mezdelex/resume',
     app: 'https://www.mezdelex.com',
     description:
@@ -175,7 +198,7 @@ export default [
     id: 'Concesionario-SPA',
     pushed_at: '',
     name: 'Concesionario',
-    image: require('@/assets/concesionario.jpg'),
+    image: concesionario,
     repo: 'https://github.com/mezdelex/Concesionario-SPA',
     app: 'https://github.com/mezdelex/Concesionario-SPA',
     description:
@@ -185,7 +208,7 @@ export default [
     id: 'Recetario-SPA',
     pushed_at: '',
     name: 'Recetario SPA',
-    image: require('@/assets/recetario.jpg'),
+    image: recetario,
     repo: 'https://github.com/mezdelex/Recetario-SPA',
     app: 'https://github.com/mezdelex/Recetario-SPA',
     description:
@@ -195,7 +218,7 @@ export default [
     id: 'Recetario-RESTful-API',
     pushed_at: '',
     name: 'Recetario RESTful API',
-    image: require('@/assets/recetario2.jpg'),
+    image: recetario2,
     repo: 'https://github.com/mezdelex/Recetario-RESTful-API',
     app: 'https://github.com/mezdelex/Recetario-RESTful-API',
     description:
@@ -205,7 +228,7 @@ export default [
     id: 'AoC2020',
     pushed_at: '',
     name: 'Advent of Code (2020)',
-    image: require('@/assets/aoc2020.png'),
+    image: aoc2020,
     repo: 'https://github.com/mezdelex/AoC2020',
     app: 'https://github.com/mezdelex/AoC2020',
     description:
@@ -215,7 +238,7 @@ export default [
     id: 'HackerRank',
     pushed_at: '',
     name: 'HackerRank',
-    image: require('@/assets/hackerrank.png'),
+    image: hackerrank,
     repo: 'https://github.com/mezdelex/HackerRank',
     app: 'https://www.hackerrank.com/alexcondegomez',
     description:
@@ -225,7 +248,7 @@ export default [
     id: 'Trivia',
     pushed_at: '',
     name: 'Trivia',
-    image: require('@/assets/trivia.jpg'),
+    image: trivia,
     repo: 'https://github.com/mezdelex/Trivia',
     app: 'https://mezdelex.github.io/Trivia/trivial_main.html',
     description:
