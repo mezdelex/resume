@@ -10,20 +10,22 @@
         Alejandro Conde Gómez
         <span class="curly-brackets">}</span>
       </h1>
-      <h3 class="github" v-if="repositoriesStore.finished && repositoriesStore.link">
+      <h3 class="github" v-if="repositoriesStore.lastCommit">
         <div class="date-and-link">
           <div>
             Last activity:
-            <span class="custom-date">{{ repositoriesStore.date }}</span>
+            <span class="custom-date">{{ repositoriesStore.lastCommit.date }}</span>
           </div>
           <div>
             Commit:
-            <a class="custom-link" :href="repositoriesStore.link" target="_blank">Link</a>
+            <a class="custom-link" :href="repositoriesStore.lastCommit.link" target="_blank"
+              >Link</a
+            >
           </div>
         </div>
         <div class="custom-message-container">
           Message:
-          <span class="custom-message">{{ repositoriesStore.message }}</span>
+          <span class="custom-message">{{ repositoriesStore.lastCommit.message }}</span>
         </div>
       </h3>
       <div v-else class="github">
@@ -48,20 +50,9 @@
 </template>
 
 <script setup lang="ts">
-import gitHubService from '@/services/github/gitHubService';
 import repositoriesStore from '@/shared/repositoriesStore';
 import { Icons } from '@/enums/enums';
-import { onMounted } from 'vue';
 import alejandro from '@/assets/alejandro.png';
-
-onMounted(async () => {
-  if (repositoriesStore.link === '') {
-    await gitHubService.getRepos();
-    gitHubService.getUpdatedRepo();
-    await gitHubService.getLastCommit();
-    repositoriesStore.finished = true;
-  }
-});
 </script>
 
 <style scoped>

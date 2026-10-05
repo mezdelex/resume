@@ -1,6 +1,6 @@
-import IProject from '@/models/IProject';
-import { reactive } from 'vue';
+import { computed, reactive } from 'vue';
+import projectsService from '@/services/projects/projectsService';
 
 export default reactive({
-  projects: reactive<IProject[]>([]),
+  projects: computed(() => projectsService.sortProjects()),
 });

@@ -1,5 +1,5 @@
 <template>
-  <main v-if="repositoriesStore.finished" class="p-grid">
+  <main class="p-grid">
     <Card
       class="mb-auto mt-5 mx-auto"
       v-for="project in projectsStore.projects"
@@ -41,16 +41,11 @@
       </template>
     </Card>
   </main>
-  <div v-else class="spinner-wrapper">
-    <div class="dot-spin" />
-  </div>
 </template>
 
 <script setup lang="ts">
 import IProject from '@/models/IProject';
-import projectsService from '@/services/projects/projectsService';
 import projectsStore from '@/shared/projectsStore';
-import repositoriesStore from '@/shared/repositoriesStore';
 import { Icons } from '@/enums/enums';
 import {
   differenceInDays,
@@ -59,7 +54,6 @@ import {
   format,
   parseISO,
 } from 'date-fns';
-import { watchEffect } from 'vue';
 
 const getLastUpdate = (project: IProject): string => {
   if (!project.pushed_at.length) {
@@ -76,8 +70,6 @@ const getLastUpdate = (project: IProject): string => {
       : `${hoursDiff} hour(s) ago`
     : format(parsed, 'yyyy-MM-dd');
 };
-
-watchEffect(() => projectsService.sortProjects());
 </script>
 
 <style scoped>
@@ -192,131 +184,5 @@ main {
   font-size: 0.65rem;
   margin-inline: 0.1rem;
   vertical-align: middle;
-}
-
-.dot-spin {
-  animation: dot-spin 1s infinite linear;
-  background-color: transparent;
-  border-radius: var(--radius-md);
-  box-shadow:
-    0 -18px 0 0 var(--accent),
-    12.727926px -12.727926px 0 0 var(--accent),
-    18px 0 0 0 var(--accent),
-    12.727926px 12.727926px 0 0 rgba(152, 128, 255, 0),
-    0 18px 0 0 rgba(152, 128, 255, 0),
-    -12.727926px 12.727926px 0 0 rgba(152, 128, 255, 0),
-    -18px 0 0 0 rgba(152, 128, 255, 0),
-    -12.727926px -12.727926px 0 0 rgba(152, 128, 255, 0);
-  color: transparent;
-  display: flex;
-  height: 10px;
-  width: 10px;
-}
-
-@keyframes dot-spin {
-  0%,
-  100% {
-    box-shadow:
-      0 -18px 0 0 var(--accent),
-      12.727926px -12.727926px 0 0 var(--accent),
-      18px 0 0 0 var(--accent),
-      12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      0 18px 0 -5px rgba(152, 128, 255, 0),
-      -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      -18px 0 0 -5px rgba(152, 128, 255, 0),
-      -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
-  }
-
-  12.5% {
-    box-shadow:
-      0 -18px 0 -5px rgba(152, 128, 255, 0),
-      12.727926px -12.727926px 0 0 var(--accent),
-      18px 0 0 0 var(--accent),
-      12.727926px 12.727926px 0 0 var(--accent),
-      0 18px 0 -5px rgba(152, 128, 255, 0),
-      -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      -18px 0 0 -5px rgba(152, 128, 255, 0),
-      -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
-  }
-
-  25% {
-    box-shadow:
-      0 -18px 0 -5px rgba(152, 128, 255, 0),
-      12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0),
-      18px 0 0 0 var(--accent),
-      12.727926px 12.727926px 0 0 var(--accent),
-      0 18px 0 0 var(--accent),
-      -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      -18px 0 0 -5px rgba(152, 128, 255, 0),
-      -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
-  }
-
-  37.5% {
-    box-shadow:
-      0 -18px 0 -5px rgba(152, 128, 255, 0),
-      12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0),
-      18px 0 0 -5px rgba(152, 128, 255, 0),
-      12.727926px 12.727926px 0 0 var(--accent),
-      0 18px 0 0 var(--accent),
-      -12.727926px 12.727926px 0 0 var(--accent),
-      -18px 0 0 -5px rgba(152, 128, 255, 0),
-      -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
-  }
-
-  50% {
-    box-shadow:
-      0 -18px 0 -5px rgba(152, 128, 255, 0),
-      12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0),
-      18px 0 0 -5px rgba(152, 128, 255, 0),
-      12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      0 18px 0 0 var(--accent),
-      -12.727926px 12.727926px 0 0 var(--accent),
-      -18px 0 0 0 var(--accent),
-      -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
-  }
-
-  62.5% {
-    box-shadow:
-      0 -18px 0 -5px rgba(152, 128, 255, 0),
-      12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0),
-      18px 0 0 -5px rgba(152, 128, 255, 0),
-      12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      0 18px 0 -5px rgba(152, 128, 255, 0),
-      -12.727926px 12.727926px 0 0 var(--accent),
-      -18px 0 0 0 var(--accent),
-      -12.727926px -12.727926px 0 0 var(--accent);
-  }
-
-  75% {
-    box-shadow:
-      0 -18px 0 0 var(--accent),
-      12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0),
-      18px 0 0 -5px rgba(152, 128, 255, 0),
-      12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      0 18px 0 -5px rgba(152, 128, 255, 0),
-      -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      -18px 0 0 0 var(--accent),
-      -12.727926px -12.727926px 0 0 var(--accent);
-  }
-
-  87.5% {
-    box-shadow:
-      0 -18px 0 0 var(--accent),
-      12.727926px -12.727926px 0 0 var(--accent),
-      18px 0 0 -5px rgba(152, 128, 255, 0),
-      12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      0 18px 0 -5px rgba(152, 128, 255, 0),
-      -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0),
-      -18px 0 0 -5px rgba(152, 128, 255, 0),
-      -12.727926px -12.727926px 0 0 var(--accent);
-  }
-}
-
-.spinner-wrapper {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  min-height: 30vh;
-  width: 100%;
 }
 </style>
