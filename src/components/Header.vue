@@ -28,11 +28,6 @@
           <span class="custom-message">{{ repositoriesStore.lastCommit.message }}</span>
         </div>
       </h3>
-      <div v-else class="github">
-        <Skeleton width="15rem" class="mb-1" />
-        <Skeleton width="20rem" class="mb-1" />
-        <Skeleton width="20rem" />
-      </div>
       <div class="social">
         <a
           href="https://github.com/mezdelex"

@@ -3,7 +3,6 @@ import Aura from '@primeuix/themes/aura';
 import Card from 'primevue/card';
 import PrimeVue from 'primevue/config';
 import ScrollTop from 'primevue/scrolltop';
-import Skeleton from 'primevue/skeleton';
 import router from './router/router';
 import { createApp } from 'vue';
 
@@ -25,6 +24,5 @@ app.use(router);
 
 app.component('Card', Card);
 app.component('ScrollTop', ScrollTop);
-app.component('Skeleton', Skeleton);
 
 app.mount('#app');
